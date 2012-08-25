@@ -51,7 +51,7 @@ class PageboxesController < ApplicationController
 
     if @type == 'image'
       params[:pagebox][:content] = "<img src=\"#{params['source']}\"></img>"
-    elsif @type == 'iframe'
+    else
       params[:pagebox][:content] = "<iframe src=\"#{params['source']}\"></iframe>"
     end
 
