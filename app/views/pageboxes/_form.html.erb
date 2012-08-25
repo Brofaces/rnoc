@@ -2,39 +2,6 @@
 
   <% if @pagebox.errors.any? %>
 	<br />
-    <div class="alert alert-error">
-      <b> Oh Snap! </b> <%= pluralize(@pagebox.errors.count, "error") %> prohibited this pagebox from being saved:
-      <ul>
-      <% @pagebox.errors.full_messages.each do |msg| %>
-		<li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <br />
-
-  <span class="label label-inverse">
-	Title
-  </span><br /><br />
-  <%= f.text_field :title %><br />
-
-  <span class="label label-inverse">
-	Content
-  </span><br /><br />
-  <%= f.text_area :content %><br />
-
-  <%= f.submit :class => 'btn btn-inverse' %>
-<% end %>
-
-<hr />
-
-<p> OR select a content type... </p>
-
-<%= form_for @pagebox, :url => {:action => :create_with_type, :id => @page.id} do |f| %>
-
-  <% if @pagebox.errors.any? %>
-	<br />
 	<div class="alert alert-error">
 	  <b>Oh Snap!</b> <%= pluralize(@pagebox.errors.count, "error") %> prohibited this pagebox from being saved:
 
@@ -56,7 +23,7 @@
   <span class="label label-inverse">
 	Type
   </span><br /><br />
-  <%= select_tag "type", options_for_select(@pagebox_types) %><br /><br />
+  <%= select_tag "type", options_for_select(['image', 'iframe']) %><br /><br />
 
   <span class="label label-inverse">
 	Source

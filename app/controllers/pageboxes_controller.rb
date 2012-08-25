@@ -44,21 +44,6 @@ class PageboxesController < ApplicationController
   # POST /pageboxes.json
   def create
     @page = Page.find(params[:id])
-    @pagebox = @page.pageboxes.build(params[:pagebox])
-
-    respond_to do |format|
-      if @pagebox.save
-        format.html { redirect_to(@page, :notice => 'Pagebox was successfully created.') }
-        format.xml  { render :xml => @pagebox, :status => :created, :location => @pagebox }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @pagebox.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  def create_with_type
-    @page = Page.find(params[:id])
 
     if params['type'] == 'image'
       params[:pagebox][:content] = "<img src=\"#{params['source']}\"></img>"
