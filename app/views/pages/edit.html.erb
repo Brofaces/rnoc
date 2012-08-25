@@ -1,6 +1,10 @@
-<h1>Editing page</h1>
+<div class="container">
 
-<%= render 'form' %>
+	<h1>Editing page</h1>
 
-<%= link_to 'Show', @page %> |
-<%= link_to 'Back', pages_path %>
+	<%= render 'form' %>
+
+	<%= link_to 'Show', @page %> |
+	<%= link_to 'Back', "/pages/#{@page.id}" %>
+
+</div>

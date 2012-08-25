@@ -5,23 +5,24 @@
 
       <ul>
       <% @pagebox.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+	<li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
+	<br />
 
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </div>
+	<span class="label label-inverse">
+	  Title
+	</span><br /><br />
+    <%= f.text_field :title %><br />
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<span class="label label-inverse">
+	  Content
+	</span><br /><br />
+    <%= f.text_area :content %><br />
+
+    <%= f.submit :class => 'btn btn-inverse' %>
+
 <% end %>

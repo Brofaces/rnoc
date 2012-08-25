@@ -1,6 +1,36 @@
-<h1>Editing pagebox</h1>
+<div class="container">
 
-<%= render 'form' %>
+	<h1>Editing pagebox</h1>
 
-<%= link_to 'Show', @pagebox %> |
-<%= link_to 'Back', pageboxes_path %>
+	<%= form_for @pagebox do |f| %>
+	  <% if @pagebox.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@pagebox.errors.count, "error") %> prohibited this pagebox from being saved:</h2>
+
+	      <ul>
+	      <% @pagebox.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+
+		<br />
+
+	<span class="label label-inverse">
+	  Title
+	</span><br /><br />
+	<%= f.text_field :title %><br />
+
+	<span class="label label-inverse">
+	  Content
+	</span><br /><br />
+	<%= f.text_area :content %><br />
+
+	<%= f.submit :class => 'btn btn-inverse' %>
+
+	<% end %>
+	<%= link_to 'Show', @pagebox %> |
+	<%= link_to 'Back', "/pageboxes/#{@pagebox.id}" %>
+
+</div>

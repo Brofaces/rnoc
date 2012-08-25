@@ -11,11 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <br />
+
+	<span class="label label-inverse">
+		Title
+	</span><br /><br />
+    <%= f.text_field :title %><br />
+
+  <%= f.submit :class => 'btn btn-inverse'  %>
 <% end %>
