@@ -1,22 +1,25 @@
 <%= form_for(@page) do |f| %>
+
   <% if @page.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+	<br />
+	<div class="alert alert-error">
+      <b>Oh Snap!</b> <%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:
 
       <ul>
       <% @page.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+	<li><%= msg %></li>
       <% end %>
       </ul>
+
     </div>
   <% end %>
 
   <br />
 
-	<span class="label label-inverse">
-		Title
-	</span><br /><br />
-    <%= f.text_field :title %><br />
+  <span class="label label-inverse">
+	Title
+  </span><br /><br />
+  <%= f.text_field :title %><br />
 
   <%= f.submit :class => 'btn btn-inverse'  %>
 <% end %>

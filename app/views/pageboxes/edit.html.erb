@@ -3,19 +3,19 @@
 	<h1>Editing pagebox</h1>
 
 	<%= form_for @pagebox do |f| %>
+	<br />
 	  <% if @pagebox.errors.any? %>
-	    <div id="error_explanation">
-	      <h2><%= pluralize(@pagebox.errors.count, "error") %> prohibited this pagebox from being saved:</h2>
-
+	  <div class="alert alert-error">
+	      <b> Oh Snap! </b> <%= pluralize(@pagebox.errors.count, "error") %> prohibited this pagebox from being saved:
 	      <ul>
-	      <% @pagebox.errors.full_messages.each do |msg| %>
+		<% @pagebox.errors.full_messages.each do |msg| %>
 		<li><%= msg %></li>
-	      <% end %>
+		<% end %>
 	      </ul>
 	    </div>
 	  <% end %>
 
-		<br />
+	<br />
 
 	<span class="label label-inverse">
 	  Title
