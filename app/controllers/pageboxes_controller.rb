@@ -28,10 +28,10 @@ class PageboxesController < ApplicationController
     puts @page.title
     @pagebox = @page.pageboxes.build
 
-    #respond_to do |format|
-    #  format.html # new.html.erb
-    #  format.json { render :json => @pagebox }
-    #end
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render :json => @pagebox }
+    end
   end
 
   # GET /pageboxes/1/edit
@@ -44,8 +44,15 @@ class PageboxesController < ApplicationController
   def create
     @page = Page.find(params[:id])
     @pagebox = @page.pageboxes.build(params[:pagebox])
-    if @pagebox.save
-      redirect_to new_pagebox_path(:id => @page.id)
+
+    respond_to do |format|
+      if @pagebox.save
+        format.html { redirect_to(@page, :notice => 'Pagebox was successfully created.') }
+        format.xml  { render :xml => @pagebox, :status => :created, :location => @pagebox }
+      else
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @pagebox.errors, :status => :unprocessable_entity }
+      end
     end
   end
 
