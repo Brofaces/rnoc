@@ -1,11 +1,14 @@
 <div class="container">
 
-<p id="notice"><%= notice %></p>
-
-<p id="notice"><%= notice %></p>
 <div class="hero-unit">
 	<h1><%= @pagebox.title %></h1>
 </div>
+
+<% if notice %>
+	<div class="alert alert-info">
+	<%= notice %>
+	</div>
+<% end %>
 
 <p>
   <b>Title:</b>
