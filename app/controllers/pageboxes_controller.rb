@@ -1,4 +1,6 @@
 class PageboxesController < ApplicationController
+  include PageboxesHelper
+
   # GET /pageboxes
   # GET /pageboxes.json
   def index
@@ -45,9 +47,11 @@ class PageboxesController < ApplicationController
   def create
     @page = Page.find(params[:id])
 
-    if params['type'] == 'image'
+    @type = get_content_type(params[:source])
+
+    if @type == 'image'
       params[:pagebox][:content] = "<img src=\"#{params['source']}\"></img>"
-    elsif params['type'] == 'iframe'
+    elsif @type == 'iframe'
       params[:pagebox][:content] = "<iframe src=\"#{params['source']}\"></iframe>"
     end
 
