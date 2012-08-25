@@ -2,6 +2,7 @@ Rnoc::Application.routes.draw do
   resources :pageboxes
   resources :pages
   root :to => "home#index"
+  post 'pageboxes/create_with_type'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
