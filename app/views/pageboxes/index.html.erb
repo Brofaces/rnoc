@@ -1,0 +1,23 @@
+<h1>Listing pageboxes</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pageboxes.each do |pagebox| %>
+  <tr>
+    <td><%= pagebox.title %></td>
+    <td><%= link_to 'Show', pagebox %></td>
+    <td><%= link_to 'Edit', edit_pagebox_path(pagebox) %></td>
+    <td><%= link_to 'Destroy', pagebox, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pagebox', new_pagebox_path %>

@@ -1,0 +1,20 @@
+<div class="container">
+
+<p id="notice"><%= notice %></p>
+
+<p id="notice"><%= notice %></p>
+<div class="hero-unit">
+	<h1><%= @pagebox.title %></h1>
+</div>
+
+<p>
+  <b>Title:</b>
+  <%= @pagebox.title %>
+  <b>Content:</b>
+  <%= @pagebox.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_pagebox_path(@pagebox) %> |
+<%= link_to 'Back', pageboxes_path %>
+</div>

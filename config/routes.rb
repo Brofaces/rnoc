@@ -1,4 +1,6 @@
 Rnoc::Application.routes.draw do
+  resources :pageboxes
+  resources :pages
   root :to => "home#index"
 
   # The priority is based upon order of creation:
