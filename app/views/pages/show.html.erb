@@ -1,20 +1,18 @@
 <div class="container">
 
-<div class="hero-unit">
-	<h1><%= @page.title %></h1>
-</div>
+  <h1><%= @page.title %></h1>
 
-<% if notice %>
-	<div class="alert alert-info">
-	<%= notice %>
-	</div>
-<% end %>
+  <% if notice %>
+    <div class="alert alert-info">
+      <%= notice %>
+    </div>
+  <% end %>
 
-<% @pageboxes.each do |pb| %>
-  <p><%= link_to pb.title, pb %></p>
-<% end %>
+  <% @pageboxes.each do |pb| %>
+    <p><%= link_to pb.title, pb %></p>
+  <% end %>
 
-<%= link_to 'New pagebox', :controller => :pageboxes, :action => :new, :id => @page.id %>
-<%= link_to 'Edit', edit_page_path(@page) %>
-<%= link_to 'Back', {:controller => :home, :action => 'index'} %>
+  <%= link_to 'New pagebox', :controller => :pageboxes, :action => :new, :id => @page.id %>
+  <%= link_to 'Edit', edit_page_path(@page) %>
+  <%= link_to 'Back', {:controller => :home, :action => 'index'} %>
 </div>

@@ -1,18 +1,7 @@
 <div class="container">
+  <% @pages.each do |page| %>
+    <p><i class="icon-fire icon-white"></i> &nbsp; <%= link_to page.title, page_path(page) %></p>
+  <% end %>
 
-  	<div class="navbar">
-    	<div class="navbar-inner">
-      		<div class="container">
-				<a class="brand" href="/">
-	  				RNOC
-					</a>
-      		</div>
-    	</div>
-  	</div>
-
-	<% @pages.each do |page| %>
-		<p><i class="icon-fire"></i> &nbsp; <%= link_to page.title, page_path(page) %></p>
-	<% end %>
-
-	<a class="btn" href="<%= new_page_path %>"> Add a page </a>
+  <a class="btn" href="<%= new_page_path %>"> Add a page </a>
 </div>

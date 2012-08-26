@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Rnoc</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Rnoc</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="brand" href="/">
+              <img src="/images/Red_Hat_RGB_150px.png" />
+              <i>RNOC</i>
+            </a>
+          </div>
+        </div>
+      </div>
 
-<%= yield %>
+      <%= yield %>
 
-</body>
+  </body>
 </html>
