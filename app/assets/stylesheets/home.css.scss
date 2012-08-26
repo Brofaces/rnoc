@@ -1704,21 +1704,21 @@ legend .control-group {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #da4f49;
-  background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
-  background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f);
-  background-image: -o-linear-gradient(top, #ee5f5b, #bd362f);
-  background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
+  background-image: -moz-linear-gradient(top, #BD362F, #CC0000);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#BD362F), to(#CC0000));
+  background-image: -webkit-linear-gradient(top, #BD362F, #CC0000);
+  background-image: -o-linear-gradient(top, #BD362F, #CC0000);
+  background-image: linear-gradient(to bottom, #BD362F, #CC0000);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
-  border-color: #bd362f #bd362f #802420;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffBD362F', endColorstr='#ffCC0000', GradientType=0);
+  border-color: #CC0000 #CC0000 #802420;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #bd362f;
+  *background-color: #CC0000;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   &:hover, &:active, &.active, &.disabled, &[disabled] {
     color: #ffffff;
-    background-color: #bd362f;
+    background-color: #CC0000;
     *background-color: #a9302a; }
   &:active, &.active {
     background-color: #942a25 \9; } }
