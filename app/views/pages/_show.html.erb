@@ -3,8 +3,6 @@
 <!-- <script src="/jquery.masonry.min.js"></script> -->
 <!-- <script src="pagedisplayer.js"></script> -->
 
-
-
 <div class="container">
   <div class="navbar-inner">
     <h1><%= @page.title %></h1>
@@ -16,10 +14,10 @@
     </div>
   <% end %>
 
-  <div class="allthepageboxes">
+  <div class="container-fluid">
     <% @pageboxes.each do |pb| %>
       <div class="pagebox_container">
-        <div class="navbar-inner"><%= pb.title %> <%= link_to '[x]', pb, :confirm => 'Remove this item?', :method => :delete %> </div>
+        <div class="navbar-more-inner"><%= pb.title %> <%= link_to '[x]', pb, :confirm => 'Remove this item?', :method => :delete, :class => 'close-inner' %> </div>
         <%= pb.content.html_safe %>
       </div>
 
@@ -27,8 +25,15 @@
   </div>
 </div>
 
-<div class="container footerlink">
-  <%= link_to 'New pagebox', { :controller => :pageboxes, :action => :new, :id => @page.id }, :class => 'btn' %>
-  <%= link_to 'Edit', edit_page_path(@page), :class => 'btn' %>
-  <%= link_to 'Back', {:controller => :home, :action => 'index'}, :class => 'btn' %>
+<div class="container">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="/">Home</a>
+      <ul class="nav">
+        <li><%= link_to 'New Pagebox', { :controller => :pageboxes, :action => :new, :id => @page.id }%></li>
+        <li><%= link_to 'Edit', edit_page_path(@page)%></li>
+        <li><%= link_to 'Back', {:controller => :home, :action => 'index'}%></li>
+      </ul>
+    </div>
+  </div>
 </div>

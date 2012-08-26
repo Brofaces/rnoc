@@ -1,27 +1,36 @@
 <div class="container">
 
-<h1>Listing pages</h1>
+  <div class="navbar-inner">
+    <h1>Listing pages</h1>
+  </div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <table class="table table-condensed">
+    <tr>
+      <th>Title</th>
+      <th>Action</th>
+    </tr>
 
-<% @pages.each do |page| %>
-  <tr>
-    <td><%= page.title %></td>
-    <td><%= link_to 'Show', page, :class => 'btn' %></td>
-    <td><%= link_to 'Edit', edit_page_path(page), :class => 'btn' %></td>
-    <td><%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %></td>
-  </tr>
-<% end %>
-</table>
+    <% @pages.each do |page| %>
+      <tr>
+        <td><%= page.title %></td>
+        <td>
+          <div class="btn-group">
+            <button class="btn">Show</button>
+            <button class="btn">Edit</button>
+            <button class="btn">Delete</button>
+          </div>
 
-<br />
+        </td>
 
-<%= link_to 'New Page', new_page_path %>
+        <!-- <td><%= link_to 'Show', page, :class => 'btn' %></td> -->
+        <!-- <td><%= link_to 'Edit', edit_page_path(page), :class => 'btn' %></td> -->
+        <!-- <td><%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %></td> -->
+      </tr>
+    <% end %>
+  </table>
+
+  <br />
+
+  <%= link_to 'New Page', new_page_path %>
 
 </div>
