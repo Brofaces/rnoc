@@ -2,7 +2,7 @@
 
 body {
   background-color: #000000;
-/*  color: #333; */
+  /*  color: #333; */
   color: rgb(96,96,91);
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -80,4 +80,18 @@ div {
 
 iframe {
   width: 600px;
+}
+
+.footerlink > a {
+  color: #666;
+  &:visited {
+    color: #666;
+  }
+  &:hover {
+    color: #fff;
+  }
+}
+
+.home {
+  font-size: 175%;
 }
