@@ -95,3 +95,24 @@ iframe {
 .home {
   font-size: 175%;
 }
+
+.home > a {
+  color: rgb(204,0,0);
+  text-decoration: none;
+  &:visited {
+    color: rgb(204,0,0);
+  }
+  &:hover {
+    color: #fff;
+  }
+}
+
+.pagebox_container a {
+  color: rgb(204,0,0);
+  &:visited {
+    color: rgb(204,0,0);
+  }
+  &:hover {
+    color: #000;
+  }
+}

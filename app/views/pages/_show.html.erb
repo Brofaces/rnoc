@@ -19,7 +19,7 @@
   <div class="allthepageboxes">
     <% @pageboxes.each do |pb| %>
       <div class="pagebox_container">
-        <div class="navbar-inner"><%= pb.title %></div>
+        <div class="navbar-inner"><%= pb.title %> <%= link_to '[x]', pb, :confirm => 'Remove this item?', :method => :delete %> </div>
         <%= pb.content.html_safe %>
       </div>
 
