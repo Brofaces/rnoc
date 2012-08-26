@@ -28,7 +28,6 @@ a {
   }
   &:hover {
     color: #fff;
-    background-color: #000;
   }
 }
 
@@ -71,6 +70,14 @@ div {
   }
 }
 
+.allthepageboxes {
+  width: 100%;
+}
+
 .pagebox_container {
   float: left;
+}
+
+iframe {
+  width: 600px;
 }

@@ -1,3 +1,4 @@
+<!-- If we're cool, eventually we'll use a fancy dynamic layout arrangement thing -->
 <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> -->
 <!-- <script src="/jquery.masonry.min.js"></script> -->
 <!-- <script src="pagedisplayer.js"></script> -->
@@ -15,12 +16,8 @@
     </div>
   <% end %>
 
-
-  <!-- instead of links... they should be displayed -->
-
   <div class="allthepageboxes">
     <% @pageboxes.each do |pb| %>
-      <!--    <p><%= link_to pb.title, pb %></p> -->
       <div class="pagebox_container">
         <div class="navbar-inner"><%= pb.title %></div>
         <%= pb.content.html_safe %>
