@@ -1,5 +1,10 @@
-<div class="container">
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> -->
+<!-- <script src="/jquery.masonry.min.js"></script> -->
+<!-- <script src="pagedisplayer.js"></script> -->
 
+
+
+<div class="container">
   <div class="navbar-inner">
     <h1><%= @page.title %></h1>
   </div>
@@ -13,10 +18,19 @@
 
   <!-- instead of links... they should be displayed -->
 
-  <% @pageboxes.each do |pb| %>
-    <p><%= link_to pb.title, pb %></p>
-  <% end %>
+  <div class="allthepageboxes">
+    <% @pageboxes.each do |pb| %>
+      <!--    <p><%= link_to pb.title, pb %></p> -->
+      <div class="pagebox_container">
+        <div class="navbar-inner"><%= pb.title %></div>
+        <%= pb.content.html_safe %>
+      </div>
 
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
   <%= link_to 'New pagebox', :controller => :pageboxes, :action => :new, :id => @page.id %>
   <%= link_to 'Edit', edit_page_path(@page) %>
   <%= link_to 'Back', {:controller => :home, :action => 'index'} %>
