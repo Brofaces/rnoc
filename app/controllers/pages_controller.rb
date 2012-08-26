@@ -54,6 +54,16 @@ class PagesController < ApplicationController
     end
   end
 
+  def cycle
+    @page = Page.find(params[:id])
+    @pageboxes = @page.pageboxes
+    @next = @page.next
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
   # PUT /pages/1
   # PUT /pages/1.json
   def update

@@ -3,6 +3,8 @@ Rnoc::Application.routes.draw do
   resources :pages
   root :to => "home#index"
 
+  get "pages/(/:id)/cycle"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
