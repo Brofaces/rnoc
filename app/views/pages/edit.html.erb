@@ -4,7 +4,7 @@
 
 	<%= render 'form' %>
 
-	<%= link_to 'Show', @page %> |
-	<%= link_to 'Back', "/pages/#{@page.id}" %>
+	<%= link_to 'Show', @page, :class => 'btn' %>
+	<%= link_to 'Back', "/pages/#{@page.id}", :class => 'btn' %>
 
 </div>
