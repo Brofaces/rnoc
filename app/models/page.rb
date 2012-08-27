@@ -9,4 +9,12 @@ class Page < ActiveRecord::Base
     end
     return @next
   end
+
+  def prev
+    @prev = Page.first(:conditions => ['id < ?', self.id], :order => 'id DESC')
+    if @prev == nil
+        @prev = Page.first
+    end
+    return @prev
+  end
 end
