@@ -88,10 +88,11 @@ class PageboxesController < ApplicationController
   # DELETE /pageboxes/1.json
   def destroy
     @pagebox = Pagebox.find(params[:id])
+    @id = @pagebox.page_id
     @pagebox.destroy
 
     respond_to do |format|
-      format.html { redirect_to pageboxes_url }
+      format.html { redirect_to "/pages/#{@id}" }
       format.json { head :no_content }
     end
   end
