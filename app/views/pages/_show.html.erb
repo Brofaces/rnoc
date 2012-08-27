@@ -27,11 +27,18 @@
 	    <i class="icon-pencil icon-black"></i> <% end %>
 	</li>
         <li>
-	  <%= link_to("/pages/#{@page.next.id}", {:class => 'btn btn-small'}) do %>
+	  <%= link_to("/pages/#{@page.prev.id}", {:class => 'btn btn-small'}) do %>
 	    <i class="icon-step-backward icon-black"></i> <% end %>
 	</li>
+	<li>
+	  &nbsp;
+	</li>
         <li>
-	  <%= link_to("/pages/#{@page.id}/cycle", {:class => 'btn btn-small btn-danger'}) do %>
+	  <%= link_to("/pages/#{@page.id}", {:class => 'btn btn-small btn-inverse'}) do %>
+	    <i class="icon-stop icon-white"></i> <% end %>
+	</li>
+        <li>
+	  <%= link_to("/pages/#{@page.id}/cycle", {:class => 'btn btn-small btn-success'}) do %>
 	    <i class="icon-play icon-black"></i> <% end %>
 	</li>
         <li>
