@@ -9,17 +9,17 @@
   <body>
     <div class="container">
       <div class="navbar">
-        <div class="navbar-inner">
-          <div class="container">
-            <a class="brand" href="/">
-              <img src="/images/Red_Hat_RGB_125px.png" />
-              <i>RNOC</i>
-            </a>
+        <div class="navbar-inner navbar-fixed-top">
+          <div class="pull-left">
+            <a href="/"><img src="/images/Red_Hat_RGB_125px.png"></a>
+          </div>
+          <div class="pull-right">
+            <h4><i>RNOC</i></h4>
           </div>
         </div>
       </div>
     </div>
-    <%= yield %>
-
+<br>
+      <%= yield %>
   </body>
 </html>
