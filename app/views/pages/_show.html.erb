@@ -1,38 +1,43 @@
-<!-- If we're cool, eventually we'll use a fancy dynamic layout arrangement thing -->
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> -->
-<!-- <script src="/jquery.masonry.min.js"></script> -->
-<!-- <script src="pagedisplayer.js"></script> -->
+<!--       <h3><%= @page.title %></h3> -->
 
-<div class="container">
-  <div class="navbar-inner">
-    <h1><%= @page.title %></h1>
-  </div>
+<% if notice %>
+  <div class="alert alert-info"><%= notice %></div>
+<% end %>
 
-  <% if notice %>
-    <div class="alert alert-info">
-      <%= notice %>
+<div class="row-fluid">
+  <% @pageboxes.each do |pb| %>
+    <div class="span4 pagebox_container">
+      <!-- <div class="navbar-more-inner"><%= pb.title %> <%= link_to '[x]', pb, :confirm => 'Remove this item?', :method => :delete, :class => 'close-inner' %> </div> -->
+      <%= pb.content.html_safe %>
     </div>
   <% end %>
-
-  <div class="container-fluid">
-    <% @pageboxes.each do |pb| %>
-      <div class="pagebox_container">
-        <div class="navbar-more-inner"><%= pb.title %> <%= link_to '[x]', pb, :confirm => 'Remove this item?', :method => :delete, :class => 'close-inner' %> </div>
-        <%= pb.content.html_safe %>
-      </div>
-
-    <% end %>
-  </div>
 </div>
+
 
 <div class="container">
   <div class="navbar">
-    <div class="navbar-inner">
-      <a class="brand" href="/">Home</a>
+    <div class="navbar-inner navbar-fixed-bottom">
       <ul class="nav">
-        <li><%= link_to 'New Pagebox', { :controller => :pageboxes, :action => :new, :id => @page.id }%></li>
-        <li><%= link_to 'Edit', edit_page_path(@page)%></li>
-        <li><%= link_to 'Back', {:controller => :home, :action => 'index'}%></li>
+        <li>
+	  <%= link_to({:controller => :pageboxes, :action => :new, :id => @page.id}, {:class => 'btn btn-small'}) do %>
+	    <i class="icon-plus icon-black"></i> <% end %>
+	</li>
+        <li>
+	  <%= link_to(edit_page_path(@page), {:class => 'btn btn-small'}) do %>
+	    <i class="icon-pencil icon-black"></i> <% end %>
+	</li>
+        <li>
+	  <%= link_to("/pages/#{@page.next.id}", {:class => 'btn btn-small'}) do %>
+	    <i class="icon-step-backward icon-black"></i> <% end %>
+	</li>
+        <li>
+	  <%= link_to("/pages/#{@page.id}/cycle", {:class => 'btn btn-small btn-danger'}) do %>
+	    <i class="icon-play icon-black"></i> <% end %>
+	</li>
+        <li>
+	  <%= link_to("/pages/#{@page.next.id}", {:class => 'btn btn-small'}) do %>
+	    <i class="icon-step-forward icon-black"></i> <% end %>
+	</li>
       </ul>
     </div>
   </div>

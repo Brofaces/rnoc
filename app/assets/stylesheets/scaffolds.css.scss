@@ -60,7 +60,7 @@ div {
     padding: 5px 5px 5px 15px;
     font-size: 12px;
     margin: -7px;
-    margin-bottom: 0px;
+    marginbottom: 0px;
     background-color: #c00;
     color: #fff;
   }
@@ -76,10 +76,11 @@ div {
 
 .pagebox_container {
   float: left;
+  text-align: center;
 }
 
 iframe {
-  width: 600px;
+  width: 720px;
 }
 
 .footerlink > a {
