@@ -30,7 +30,7 @@
 	</li>
 
         <li>
-	  <%=  link_to(@page, :confirm => 'Are you sure?', :method => :delete) do %>
+	  <%=  link_to(@page, {:confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-small'}) do %>
 	    <i class="icon-trash icon-red"></i> <% end %>
 	</li>
 	<li>
