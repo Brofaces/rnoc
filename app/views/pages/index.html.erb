@@ -15,22 +15,19 @@
         <td><%= page.title %></td>
         <td>
           <div class="btn-group">
-            <button class="btn">Show</button>
-            <button class="btn">Edit</button>
-            <button class="btn">Delete</button>
+        <%= link_to 'Show', page, :class => 'btn' %>
+        <%= link_to 'Edit', edit_page_path(page), :class => 'btn' %>
+        <%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %>
           </div>
 
         </td>
 
-        <!-- <td><%= link_to 'Show', page, :class => 'btn' %></td> -->
-        <!-- <td><%= link_to 'Edit', edit_page_path(page), :class => 'btn' %></td> -->
-        <!-- <td><%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %></td> -->
       </tr>
     <% end %>
   </table>
 
   <br />
 
-  <%= link_to 'New Page', new_page_path %>
+  <%= link_to 'New Page', new_page_path, :class => 'btn' %>
 
 </div>
