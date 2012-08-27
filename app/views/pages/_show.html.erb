@@ -21,7 +21,10 @@
 <div class="row-fluid">
   <% @pageboxes.each do |pb| %>
     <div class="span4 pagebox_container">
-      <div class="navbar-more-inner"><%= pb.title %> <%= link_to '[x]', pb, :confirm => 'Remove this item?', :method => :delete, :class => 'close-inner' %> </div>
+      <div class="navbar-more-inner"><%= pb.title %>
+		<%= link_to '[x]', pb, :confirm => 'Remove this item?', :method => :delete, :class => 'close-inner' %>
+		<%= link_to '[e]', edit_pagebox_path(pb), :class => 'close-inner' %>
+      </div>
       <%= pb.content.html_safe %>
     </div>
   <% end %>
@@ -32,35 +35,35 @@
   <div class="navbar">
     <div class="navbar-inner navbar-fixed-bottom">
       <ul class="nav">
-        <li>
+	<li>
 	  <%= link_to({:controller => :pageboxes, :action => :new, :id => @page.id}, {:class => 'btn btn-small'}) do %>
 	    <i class="icon-plus icon-black"></i> <% end %>
 	</li>
-        <li>
+	<li>
 	  <%= link_to(edit_page_path(@page), {:class => 'btn btn-small'}) do %>
 	    <i class="icon-pencil icon-black"></i> <% end %>
 	</li>
 
-        <li>
+	<li>
 	  <%=  link_to(@page, {:confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-small'}) do %>
 	    <i class="icon-trash icon-red"></i> <% end %>
 	</li>
 	<li>
 	  &nbsp;
 	</li>
-        <li>
+	<li>
 	  <%= link_to("/pages/#{@page.prev.id}", {:class => 'btn btn-small'}) do %>
 	    <i class="icon-step-backward icon-black"></i> <% end %>
 	</li>
-        <li>
+	<li>
 	  <%= link_to("/pages/#{@page.id}", {:class => 'btn btn-small btn-inverse'}) do %>
 	    <i class="icon-stop icon-white"></i> <% end %>
 	</li>
-        <li>
+	<li>
 	  <%= link_to("/pages/#{@page.id}/cycle", {:class => 'btn btn-small btn-success'}) do %>
 	    <i class="icon-play icon-black"></i> <% end %>
 	</li>
-        <li>
+	<li>
 	  <%= link_to("/pages/#{@page.next.id}", {:class => 'btn btn-small'}) do %>
 	    <i class="icon-step-forward icon-black"></i> <% end %>
 	</li>

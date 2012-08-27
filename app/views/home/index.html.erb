@@ -1,7 +1,11 @@
 <div class="container">
   <br>
+  <% if !@pages.empty? %>
   <% @pages.each do |page| %>
-    <p><i class="icon-fire icon-white"></i> &nbsp; <font class="home"><%= link_to page.title, page_path(page) %></font></p>
+  <p><i class="icon-fire icon-white"></i> &nbsp; <font class="home"><%= link_to page.title, page_path(page) %></font></p>
+  <% end %>
+  <% else %>
+  <p><font class="home">No pages to list. Please add a page.</font></p>
   <% end %>
 </div>
 
@@ -10,17 +14,19 @@
   <div class="navbar">
     <div class="navbar-inner navbar-fixed-bottom">
       <ul class="nav">
-        <li>
-          <%= link_to({:controller => :pages, :action => :new}, {:class => 'btn btn-small'}) do %>
-            <i class="icon-plus-sign icon-black"></i> <% end %>
-        </li>
-        <li>
-          &nbsp;
-        </li>
-        <li>
-          <%= link_to("/pages/#{@pages.first.id}/cycle", {:class => 'btn btn-small btn-success'}) do %>
-            <i class="icon-play icon-black"></i> <% end %>
-        </li>
+	<li>
+	  <%= link_to({:controller => :pages, :action => :new}, {:class => 'btn btn-small'}) do %>
+	    <i class="icon-plus-sign icon-black"></i> <% end %>
+	</li>
+	<li>
+	  &nbsp;
+	</li>
+		<% if !@pages.empty? %>
+		<li>
+		  <%= link_to("/pages/#{@pages.first.id}/cycle", {:class => 'btn btn-small btn-success'}) do %>
+		  <i class="icon-play icon-black"></i> <% end %>
+		</li>
+		<% end %>
       </ul>
     </div>
   </div>
