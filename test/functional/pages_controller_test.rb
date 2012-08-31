@@ -44,6 +44,6 @@ class PagesControllerTest < ActionController::TestCase
       delete :destroy, :id => @page
     end
 
-    assert_redirected_to pages_path
+    assert_redirected_to root_path
   end
 end
