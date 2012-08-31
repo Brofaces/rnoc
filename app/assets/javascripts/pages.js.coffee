@@ -9,7 +9,7 @@ $(document).ready =>
             when 37
                 location.href = $("#prev").attr("href")
             # toggle cycling through pages when the spacebar is pressed
-            when 0
+            when 32
                 if /.*\/cycle/.test(location.href)
                     location.href = $("#stop").attr("href")
                 else
