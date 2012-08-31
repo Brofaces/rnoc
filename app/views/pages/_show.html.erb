@@ -52,19 +52,19 @@
 	  &nbsp;
 	</li>
 	<li>
-	  <%= link_to("/pages/#{@page.prev.id}", {:class => 'btn btn-small'}) do %>
+      <%= link_to("/pages/#{@page.prev.id}", {:class => 'btn btn-small', :id => 'prev'}) do %>
 	    <i class="icon-step-backward icon-black"></i> <% end %>
 	</li>
 	<li>
-	  <%= link_to("/pages/#{@page.id}", {:class => 'btn btn-small btn-inverse'}) do %>
+      <%= link_to("/pages/#{@page.id}", {:class => 'btn btn-small btn-inverse', :id => 'stop'}) do %>
 	    <i class="icon-stop icon-white"></i> <% end %>
 	</li>
 	<li>
-	  <%= link_to("/pages/#{@page.id}/cycle", {:class => 'btn btn-small btn-success'}) do %>
+      <%= link_to("/pages/#{@page.id}/cycle", {:class => 'btn btn-small btn-success', :id => 'play'}) do %>
 	    <i class="icon-play icon-black"></i> <% end %>
 	</li>
 	<li>
-	  <%= link_to("/pages/#{@page.next.id}", {:class => 'btn btn-small'}) do %>
+      <%= link_to("/pages/#{@page.next.id}", {:class => 'btn btn-small', :id => 'next'}) do %>
 	    <i class="icon-step-forward icon-black"></i> <% end %>
 	</li>
       </ul>
