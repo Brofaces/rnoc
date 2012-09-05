@@ -2,6 +2,8 @@
 
 one:
   title: MyString
+  page: one
 
 two:
   title: MyString
+  page: two
