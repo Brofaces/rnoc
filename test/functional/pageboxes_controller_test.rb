@@ -3,6 +3,7 @@ require 'test_helper'
 class PageboxesControllerTest < ActionController::TestCase
   setup do
     @pagebox = pageboxes(:one)
+    @page = pages(:one)
   end
 
   test "should get index" do
@@ -12,16 +13,16 @@ class PageboxesControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new
+    get :new, :id => @page
     assert_response :success
   end
 
   test "should create pagebox" do
     assert_difference('Pagebox.count') do
-      post :create, :pagebox => @pagebox.attributes
+      post :create, {:id => @page.to_param, :pagebox => {:title => "test", :content => "http://www.asdf.com"}}
     end
 
-    assert_redirected_to pagebox_path(assigns(:pagebox))
+    assert_redirected_to assigns(:pagebox).page
   end
 
   test "should show pagebox" do
@@ -44,6 +45,6 @@ class PageboxesControllerTest < ActionController::TestCase
       delete :destroy, :id => @pagebox
     end
 
-    assert_redirected_to pageboxes_path
+    assert_redirected_to @page
   end
 end

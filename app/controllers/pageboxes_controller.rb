@@ -1,6 +1,4 @@
 class PageboxesController < ApplicationController
-  include PageboxesHelper
-
   # GET /pageboxes
   # GET /pageboxes.json
   def index
@@ -47,18 +45,10 @@ class PageboxesController < ApplicationController
   def create
     @page = Page.find(params[:id])
 
-    @type = get_content_type(params[:source])
-
-    if @type == 'image'
-      params[:pagebox][:content] = "<img src=\"#{params['source']}\"></img>"
-    else
-      params[:pagebox][:content] = "<iframe src=\"#{params['source']}\"></iframe>"
-    end
-
     @pagebox = @page.pageboxes.build(params[:pagebox])
 
     respond_to do |format|
-      if @pagebox.save
+      if @pagebox.save!
         format.html { redirect_to(@page, :notice => 'Pagebox was successfully created.') }
         format.xml  { render :xml => @pagebox, :status => :created, :location => @pagebox }
       else

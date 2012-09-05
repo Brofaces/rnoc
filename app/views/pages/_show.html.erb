@@ -25,7 +25,7 @@
 		<%= link_to '[x]', pb, :confirm => 'Remove this item?', :method => :delete, :class => 'close-inner' %>
 		<%= link_to '[e]', edit_pagebox_path(pb), :class => 'close-inner' %>
       </div>
-      <%= pb.content.html_safe %>
+      <%= display_content(pb.content).html_safe %>
     </div>
   <% end %>
 </div>

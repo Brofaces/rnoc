@@ -3,7 +3,9 @@
 one:
   title: MyString
   page: one
+  content: http://www.asdf.com
 
 two:
   title: MyString
   page: two
+  content: http://www.qwerty.com
