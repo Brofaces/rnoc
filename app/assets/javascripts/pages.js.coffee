@@ -4,7 +4,9 @@
 
 $(document).ready =>
     $(document).keypress (event) ->
-        switch event.keyCode
+        code = if event.keyCode then event.keyCode else event.which
+
+        switch code
             # change to the previous page when the left arrow key is pressed
             when 37
                 location.href = $("#prev").attr("href")
