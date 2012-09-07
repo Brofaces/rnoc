@@ -24,7 +24,7 @@ class PageboxesController < ApplicationController
   # GET /pageboxes/new
   # GET /pageboxes/new.json
   def new
-    @page = Page.find(params[:id])
+    @page = Page.find(params[:page_id])
     @pagebox = @page.pageboxes.build
 
     @pagebox_types = ["image", "iframe"]
@@ -38,12 +38,13 @@ class PageboxesController < ApplicationController
   # GET /pageboxes/1/edit
   def edit
     @pagebox = Pagebox.find(params[:id])
+    @page = @pagebox.page
   end
 
   # POST /pageboxes
   # POST /pageboxes.json
   def create
-    @page = Page.find(params[:id])
+    @page = Page.find(params[:page_id])
 
     @pagebox = @page.pageboxes.build(params[:pagebox])
 
@@ -62,10 +63,11 @@ class PageboxesController < ApplicationController
   # PUT /pageboxes/1.json
   def update
     @pagebox = Pagebox.find(params[:id])
+    @page = @pagebox.page
 
     respond_to do |format|
       if @pagebox.update_attributes(params[:pagebox])
-        format.html { redirect_to @pagebox, :notice => 'Pagebox was successfully updated.' }
+        format.html { redirect_to @page, :notice => 'Pagebox was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render :action => "edit" }

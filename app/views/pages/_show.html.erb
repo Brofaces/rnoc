@@ -22,8 +22,8 @@
   <% @pageboxes.each do |pb| %>
     <div class="span4 pagebox_container">
       <div class="navbar-more-inner"><%= pb.title %>
-		<%= link_to '[x]', pb, :confirm => 'Remove this item?', :method => :delete, :class => 'close-inner' %>
-		<%= link_to '[e]', edit_pagebox_path(pb), :class => 'close-inner' %>
+		<%= link_to '[x]', [pb.page, pb], :confirm => 'Remove this item?', :method => :delete, :class => 'close-inner' %>
+		<%= link_to '[e]', edit_page_pagebox_path(pb), :class => 'close-inner' %>
       </div>
       <%= display_content(pb.content).html_safe %>
     </div>
@@ -36,7 +36,7 @@
     <div class="navbar-inner navbar-fixed-bottom">
       <ul class="nav">
 	<li>
-	  <%= link_to({:controller => :pageboxes, :action => :new, :id => @page.id}, {:class => 'btn btn-small'}) do %>
+  <%= link_to(new_page_pagebox_path(:page_id => @page.id), {:class => 'btn btn-small'}) do %>
 	    <i class="icon-plus icon-black"></i> <% end %>
 	</li>
 	<li>

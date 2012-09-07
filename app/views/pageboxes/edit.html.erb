@@ -2,7 +2,7 @@
 
 	<h1>Editing pagebox</h1>
 
-	<%= form_for @pagebox do |f| %>
+	<%= form_for([@page, @pagebox]) do |f| %>
 	<br />
 	  <% if @pagebox.errors.any? %>
 	  <div class="alert alert-error">
@@ -30,7 +30,7 @@
 	<%= f.submit :class => 'btn btn-inverse' %>
 
 	<% end %>
-	<%= link_to 'Show', @pagebox, :class => 'btn' %> |
+	<%= link_to 'Show', @page, :class => 'btn' %> |
 	<%= link_to 'Back', "/pageboxes/#{@pagebox.id}", :class => 'btn' %>
 
 </div>

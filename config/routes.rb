@@ -1,9 +1,13 @@
 Rnoc::Application.routes.draw do
-  resources :pageboxes
-  resources :pages
-  root :to => "home#index"
+  resources :pages do
+    resources :pageboxes
 
-  get "pages/(/:id)/cycle"
+    member do
+      get "cycle"
+    end
+  end
+
+  root :to => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
