@@ -37,5 +37,9 @@ $(document).ready =>
 
         setInterval( ->
             $('#play-icon').html((pad + count).slice(-pad.length))
+
+            if count == 0
+                location.href = $('#next').attr("href") + "/cycle"
+
             count--
         , 1000)
