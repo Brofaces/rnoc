@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready =>
+    # keyboard navigation controls
     $(document).keypress (event) ->
         code = if event.keyCode then event.keyCode else event.which
 
@@ -19,3 +20,22 @@ $(document).ready =>
             # change to the next page when the right arrow key is pressed
             when 39
                 location.href = $("#next").attr("href")
+
+    # colorize play/stop buttons and count down to next page change
+    if /.*\/cycle/.test(location.href)
+        $('#play').addClass('btn-success')
+        $('#play-icon').removeClass()
+        $('#stop').removeClass('btn-inverse')
+        $('#stop-icon').removeClass('icon-white')
+
+        # actually perform a countdown on the play button
+        count = 59
+        pad = '00'
+
+        $('#play').attr('color', 'black')
+        $('#play-icon').html(count)
+
+        setInterval( ->
+            $('#play-icon').html((pad + count).slice(-pad.length))
+            count--
+        , 1000)

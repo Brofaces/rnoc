@@ -57,11 +57,11 @@
 	</li>
 	<li>
       <%= link_to(@page, {:class => 'btn btn-small btn-inverse', :id => 'stop'}) do %>
-	    <i class="icon-stop icon-white"></i> <% end %>
+	    <i id="stop-icon" class="icon-stop icon-white"></i> <% end %>
 	</li>
 	<li>
       <%= link_to(cycle_page_path(@page), {:class => 'btn btn-small', :id => 'play'}) do %>
-	    <i class="icon-play icon-black"></i> <% end %>
+	    <i id="play-icon" class="icon-play icon-black"></i> <% end %>
 	</li>
 	<li>
       <%= link_to(@page.next, {:class => 'btn btn-small', :id => 'next'}) do %>
