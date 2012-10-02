@@ -23,7 +23,7 @@
     <div class="span4 pagebox_container">
       <div class="navbar-more-inner"><%= pb.title %>
 		<%= link_to '[x]', [pb.page, pb], :confirm => 'Remove this item?', :method => :delete, :class => 'close-inner' %>
-		<%= link_to '[e]', edit_page_pagebox_path(pb), :class => 'close-inner' %>
+		<%= link_to '[e]', edit_page_pagebox_path(pb.page, pb), :class => 'close-inner' %>
       </div>
       <%= display_content(pb.content).html_safe %>
     </div>
