@@ -10,4 +10,4 @@ What can I do?
 * Disable pages which aren't relevant!
 * Be the most professional nerd in your IT organization!
 
-(C) 2012 - Tim Bielawa, Andrew Butcher, Alex Chvatal
+Copyright (C) 2012 - Tim Bielawa, Andrew Butcher, Alex Chvatal
