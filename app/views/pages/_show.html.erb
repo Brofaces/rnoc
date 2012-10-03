@@ -18,6 +18,13 @@
   </div>
 <% end %>
 
+<% if !@page.enabled %>
+  <br />
+  <div class="alert alert-error">
+    <b>Ohman!<b> This page is disabled. It won't be included while using 'Play'.
+  </div>
+<% end %>
+
 <div class="row-fluid">
   <% @pageboxes.each do |pb| %>
     <div class="span4 pagebox_container">

@@ -21,5 +21,10 @@
   </span><br /><br />
   <%= f.text_field :title %><br />
 
+  <span class="label label-inverse">
+	Enabled
+  </span><br /><br />
+  <%= f.check_box :enabled, {:checked => @page.enabled}, 1, 0 %><br /><br />
+
   <%= f.submit :class => 'btn btn-inverse'  %>
 <% end %>
