@@ -2,6 +2,12 @@
 
 one:
   title: MyString
+  enabled: true
 
 two:
   title: MyString
+  enabled: true
+
+three:
+  title: BadPage
+  enabled: false
