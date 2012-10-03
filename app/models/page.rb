@@ -3,17 +3,17 @@ class Page < ActiveRecord::Base
   validates_presence_of :title
 
   def next
-    @next = Page.first(:conditions => ['id > ? and enabled = ?', self.id, 1], :order => 'id ASC')
+    @next = Page.where('id > :id', {:id => self.id}).where(:enabled => true).first
     if @next == nil
-        @next = Page.first
+        @next = Page.where(:enabled => true).first
     end
     return @next
   end
 
   def prev
-    @prev = Page.first(:conditions => ['id < ? and enabled = ?', self.id, 1], :order => 'id DESC')
+    @prev = Page.where('id < :id', {:id => self.id}).where(:enabled => true).last
     if @prev == nil
-        @prev = Page.first
+        @prev = Page.where(:enabled => true).last
     end
     return @prev
   end
