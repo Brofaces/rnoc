@@ -54,13 +54,22 @@ class PagesController < ApplicationController
     end
   end
 
+  # GET /pages/1/cycle
   def cycle
-    @page = Page.find(params[:id])
-    @pageboxes = @page.pageboxes
-    @next = @page.next
+    begin
+	@page = Page.find(params[:id], :conditions => ['enabled = ? ', true])
+        @pageboxes = @page.pageboxes
+	@next = @page.next
+    rescue
+	@page = nil
+    end
 
     respond_to do |format|
-      format.html
+	if @page == nil
+	   format.html { redirect_to "/", :notice => "Either that page was not enabled or there are no enabled pages!" }
+	else
+	   format.html
+	end
     end
   end
 
