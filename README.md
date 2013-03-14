@@ -9,5 +9,6 @@ What can I do?
 * Cycle through different pages! (For your 50 inch office TV)
 * Disable pages which aren't relevant!
 * Be the most professional nerd in your IT organization!
+* Configure logo in config/rnoc.yml
 
 Copyright (C) 2012 - Tim Bielawa, Andrew Butcher, Alex Chvatal
