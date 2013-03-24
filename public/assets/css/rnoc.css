@@ -1,0 +1,12 @@
+legend {
+    color: rgb(199, 199, 199);
+}
+
+label {
+    color: rgb(199, 199, 199);
+}
+
+input, button, select, textarea {
+    font-family: Arial;
+}
+
