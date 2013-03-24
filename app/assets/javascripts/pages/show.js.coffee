@@ -47,3 +47,10 @@ $(document).ready =>
 
                 count--
             , 1000)
+    else
+        # Give focus to the appropriate title box when creating new
+        # page(box)es
+        if /.*\/pageboxes\/new\/?$/.test(location.href)
+            $('#pagebox_title').focus()
+        if /.*\/pages\/new\/?$/.test(location.href)
+            $('#page_title').focus()
