@@ -3,43 +3,54 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready =>
-    # keyboard navigation controls
-    $(document).keypress (event) ->
-        code = if event.keyCode then event.keyCode else event.which
+    # We don't want to have spacebar and arrow keys freaking out on us
+    # when we're in the new page(box) view.
+    if /.*\/new\/?$/.test(location.href) isnt true
+        # keyboard navigation controls
+        $(document).keydown (event) ->
+            code = if event.keyCode then event.keyCode else event.which
 
-        switch code
-            # change to the previous page when the left arrow key is pressed
-            when 37
-                location.href = $("#prev").attr("href")
-            # toggle cycling through pages when the spacebar is pressed
-            when 32
-                if /.*\/cycle/.test(location.href)
-                    location.href = $("#stop").attr("href")
-                else
-                    location.href = $("#play").attr("href")
-            # change to the next page when the right arrow key is pressed
-            when 39
-                location.href = $("#next").attr("href")
 
-    # colorize play/stop buttons and count down to next page change
-    if /.*\/cycle/.test(location.href)
-        $('#play').addClass('btn-success')
-        $('#play-icon').removeClass()
-        $('#stop').removeClass('btn-inverse')
-        $('#stop-icon').removeClass('icon-white')
+            switch code
+                # change to the previous page when the left arrow key is pressed
+                when 37
+                    location.href = $("#prev").attr("href")
+                # toggle cycling through pages when the spacebar is pressed
+                when 32
+                    if /.*\/cycle/.test(location.href)
+                        location.href = $("#stop").attr("href")
+                    else
+                        location.href = $("#play").attr("href")
+                # change to the next page when the right arrow key is pressed
+                when 39
+                    location.href = $("#next").attr("href")
 
-        # actually perform a countdown on the play button
-        count = 59
-        pad = '00'
+        # colorize play/stop buttons and count down to next page change
+        if /.*\/cycle/.test(location.href)
+            $('#play').addClass('btn-success')
+            $('#play-icon').removeClass()
+            $('#stop').removeClass('btn-inverse')
+            $('#stop-icon').removeClass('icon-white')
 
-        $('#play').attr('color', 'black')
-        $('#play-icon').html(count)
+            # actually perform a countdown on the play button
+            count = 59
+            pad = '00'
 
-        setInterval( ->
-            $('#play-icon').html((pad + count).slice(-pad.length))
+            $('#play').attr('color', 'black')
+            $('#play-icon').html(count)
 
-            if count == 0
-                location.href = $('#next').attr("href") + "/cycle"
+            setInterval( ->
+                $('#play-icon').html((pad + count).slice(-pad.length))
 
-            count--
-        , 1000)
+                if count == 0
+                    location.href = $('#next').attr("href") + "/cycle"
+
+                count--
+            , 1000)
+    else
+        # Give focus to the appropriate title box when creating new
+        # page(box)es
+        if /.*\/pageboxes\/new\/?$/.test(location.href)
+            $('#pagebox_title').focus()
+        if /.*\/pages\/new\/?$/.test(location.href)
+            $('#page_title').focus()
