@@ -43,3 +43,5 @@ gem 'jquery-rails'
 # gem 'ruby-debug'
 
 gem "therubyracer", :require => 'v8'
+
+gem 'thin'
