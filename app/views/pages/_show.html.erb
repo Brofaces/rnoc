@@ -2,10 +2,10 @@
   <div class="navbar">
     <div class="navbar-inner navbar-fixed-top">
       <div class="pull-left">
-	<a href="/"><img src="<%= RNOC[:logo] %>" id="rnoc-show-logo"></a>
+        <a href="/"><img src="<%= RNOC[:logo] %>" id="rnoc-show-logo"></a>
       </div>
       <div class="pull-right">
-	  <h4><i>RNOC</i> - <%= @page.title %></h4>
+        <h4><i>RNOC</i> - <%= @page.title %></h4>
       </div>
     </div>
   </div>
@@ -14,7 +14,7 @@
 
 <% if notice %>
   <div class="container">
-  <div class="alert alert-info"><%= notice %></div>
+    <div class="alert alert-info"><%= notice %></div>
   </div>
 <% end %>
 
@@ -29,8 +29,17 @@
   <% @pageboxes.each do |pb| %>
     <div class="span4 pagebox_container">
       <div class="navbar-more-inner"><%= pb.title %>
-		<%= link_to '[x]', [pb.page, pb], :confirm => 'Remove this item?', :method => :delete, :class => 'close-inner' %>
-		<%= link_to '[e]', edit_page_pagebox_path(pb.page, pb), :class => 'close-inner' %>
+
+	<%=  link_to([pb.page, pb], {:confirm => 'Are you sure?', :method => :delete, :class => 'close-inner'}) do %>
+          <i class="icon-trash icon-red"></i> <% end %>
+
+
+        <!-- <%= link_to '[x]', [pb.page, pb], :confirm => 'Remove this item?', :method => :delete, :class => 'close-inner' %> -->
+
+
+        <%= link_to(edit_page_pagebox_path(pb.page, pb), {:class => 'close-inner'}) do %>
+          <i class="icon-edit icon-black"></i> <% end %>
+
       </div>
       <%= display_content(pb.content).html_safe %>
     </div>
@@ -42,38 +51,38 @@
   <div class="navbar">
     <div class="navbar-inner navbar-fixed-bottom">
       <ul class="nav">
-	<li>
-  <%= link_to(new_page_pagebox_path(:page_id => @page.id), {:class => 'btn btn-small'}) do %>
-	    <i class="icon-plus icon-black"></i> <% end %>
-	</li>
-	<li>
-	  <%= link_to(edit_page_path(@page), {:class => 'btn btn-small'}) do %>
-	    <i class="icon-pencil icon-black"></i> <% end %>
-	</li>
+        <li>
+          <%= link_to(new_page_pagebox_path(:page_id => @page.id), {:class => 'btn btn-small'}) do %>
+            <i class="icon-plus icon-black"></i> <% end %>
+        </li>
+        <li>
+          <%= link_to(edit_page_path(@page), {:class => 'btn btn-small'}) do %>
+            <i class="icon-pencil icon-black"></i> <% end %>
+        </li>
 
-	<li>
-	  <%=  link_to(@page, {:confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-small'}) do %>
-	    <i class="icon-trash icon-red"></i> <% end %>
-	</li>
-	<li>
-	  &nbsp;
-	</li>
-	<li>
-      <%= link_to(@page.prev, {:class => 'btn btn-small', :id => 'prev'}) do %>
-	    <i class="icon-step-backward icon-black"></i> <% end %>
-	</li>
-	<li>
-      <%= link_to(@page, {:class => 'btn btn-small btn-inverse', :id => 'stop'}) do %>
-	    <i id="stop-icon" class="icon-stop icon-white"></i> <% end %>
-	</li>
-	<li>
-      <%= link_to(cycle_page_path(@page), {:class => 'btn btn-small', :id => 'play'}) do %>
-	    <i id="play-icon" class="icon-play icon-black"></i> <% end %>
-	</li>
-	<li>
-      <%= link_to(@page.next, {:class => 'btn btn-small', :id => 'next'}) do %>
-	    <i class="icon-step-forward icon-black"></i> <% end %>
-	</li>
+        <li>
+          <%=  link_to(@page, {:confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-small'}) do %>
+            <i class="icon-trash icon-red"></i> <% end %>
+        </li>
+        <li>
+          &nbsp;
+        </li>
+        <li>
+          <%= link_to(@page.prev, {:class => 'btn btn-small', :id => 'prev'}) do %>
+            <i class="icon-step-backward icon-black"></i> <% end %>
+        </li>
+        <li>
+          <%= link_to(@page, {:class => 'btn btn-small btn-inverse', :id => 'stop'}) do %>
+            <i id="stop-icon" class="icon-stop icon-white"></i> <% end %>
+        </li>
+        <li>
+          <%= link_to(cycle_page_path(@page), {:class => 'btn btn-small', :id => 'play'}) do %>
+            <i id="play-icon" class="icon-play icon-black"></i> <% end %>
+        </li>
+        <li>
+          <%= link_to(@page.next, {:class => 'btn btn-small', :id => 'next'}) do %>
+            <i class="icon-step-forward icon-black"></i> <% end %>
+        </li>
       </ul>
     </div>
   </div>
