@@ -6,13 +6,14 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <link href="/assets/css/rnoc.css" rel="stylesheet" media="screen">
+    <script type="text/javascript" src="/assets/js/rnoc.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="navbar">
         <div class="navbar-inner navbar-fixed-top">
           <div class="pull-left">
-            <a href="/"><img src="<%= RNOC[:logo] %>"></a>
+            <a href="/"><img src="<%= RNOC[:logo] %>" id="rnoc-logo"></a>
           </div>
         </div>
       </div>
