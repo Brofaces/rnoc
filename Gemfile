@@ -45,3 +45,5 @@ gem 'jquery-rails'
 gem "therubyracer", :require => 'v8'
 
 gem 'thin'
+
+gem 'thor', '0.14.6'
