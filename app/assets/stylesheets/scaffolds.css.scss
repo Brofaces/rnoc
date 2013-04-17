@@ -1,9 +1,9 @@
 /* -*- mode: css -*- */
 
 body {
-  background-color: #000000;
+  background-color: #fe8fc5;
   /*  color: #333; */
-  color: rgb(96,96,91);
+  color: red;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -99,13 +99,13 @@ iframe {
 }
 
 .home > a {
-  color: rgb(204,0,0);
+  color: #e75095;
   text-decoration: none;
   &:visited {
-    color: rgb(204,0,0);
+    color: #e75095;
   }
   &:hover {
-    color: #fff;
+    color: red;
   }
 }
 
