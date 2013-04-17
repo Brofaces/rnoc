@@ -2792,11 +2792,11 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
   padding-left: 20px;
   padding-right: 20px;
   background-color: #fafafa;
-  background-image: -moz-linear-gradient(top, white, #f2f2f2);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#f2f2f2));
-  background-image: -webkit-linear-gradient(top, white, #f2f2f2);
-  background-image: -o-linear-gradient(top, white, #f2f2f2);
-  background-image: linear-gradient(to bottom, white, #f2f2f2);
+  background-image: -moz-linear-gradient(top, #fde6ee, #fde6ee);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fde6ee), to(#fde6ee));
+  background-image: -webkit-linear-gradient(top, #fde6ee, #fde6ee);
+  background-image: -o-linear-gradient(top, #fde6ee, #fde6ee);
+  background-image: linear-gradient(to bottom, #fde6ee, #fde6ee);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
   border: 1px solid #d4d4d4;
