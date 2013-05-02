@@ -34,10 +34,7 @@
           <i class="icon-trash icon-red"></i> <% end %>
 
 
-        <!-- <%= link_to '[x]', [pb.page, pb], :confirm => 'Remove this item?', :method => :delete, :class => 'close-inner' %> -->
-
-
-        <%= link_to(edit_page_pagebox_path(pb.page, pb), {:class => 'close-inner'}) do %>
+        <%= link_to(edit_page_pagebox_path(pb.page, pb), {:class => 'close-inner', :rel => 'tooltip', :title => 'edit page box properties'}) do %>
           <i class="icon-edit icon-black"></i> <% end %>
 
       </div>
@@ -50,13 +47,14 @@
 <div class="container">
   <div class="navbar">
     <div class="navbar-inner navbar-fixed-bottom">
+      <!-- Main action bar buttons -->
       <ul class="nav">
         <li>
-          <%= link_to(new_page_pagebox_path(:page_id => @page.id), {:class => 'btn btn-small'}) do %>
+          <%= link_to(new_page_pagebox_path(:page_id => @page.id), {:class => 'btn btn-small', :rel => 'tooltip', :title => 'add new page box'}) do %>
             <i class="icon-plus icon-black"></i> <% end %>
         </li>
         <li>
-          <%= link_to(edit_page_path(@page), {:class => 'btn btn-small'}) do %>
+          <%= link_to(edit_page_path(@page), {:class => 'btn btn-small', :rel => 'tooltip', :title => 'edit page properties'}) do %>
             <i class="icon-pencil icon-black"></i> <% end %>
         </li>
 
@@ -68,20 +66,30 @@
           &nbsp;
         </li>
         <li>
-          <%= link_to(@page.prev, {:class => 'btn btn-small', :id => 'prev'}) do %>
+          <%= link_to(@page.prev, {:class => 'btn btn-small', :id => 'prev', :rel => 'tooltip', :title => 'previous page'}) do %>
             <i class="icon-step-backward icon-black"></i> <% end %>
         </li>
         <li>
-          <%= link_to(@page, {:class => 'btn btn-small btn-inverse', :id => 'stop'}) do %>
+          <%= link_to(@page, {:class => 'btn btn-small btn-inverse', :id => 'stop', :rel => 'tooltip', :title => 'stop auto-play'}) do %>
             <i id="stop-icon" class="icon-stop icon-white"></i> <% end %>
         </li>
         <li>
-          <%= link_to(cycle_page_path(@page), {:class => 'btn btn-small', :id => 'play'}) do %>
+          <%= link_to(cycle_page_path(@page), {:class => 'btn btn-small', :id => 'play', :rel => 'tooltip', :title => 'toggle auto-play'}) do %>
             <i id="play-icon" class="icon-play icon-black"></i> <% end %>
         </li>
         <li>
-          <%= link_to(@page.next, {:class => 'btn btn-small', :id => 'next'}) do %>
+          <%= link_to(@page.next, {:class => 'btn btn-small', :id => 'next', :rel => 'tooltip', :title => 'next page'}) do %>
             <i class="icon-step-forward icon-black"></i> <% end %>
+        </li>
+      </ul>
+
+      <!-- Help/More info button -->
+      <ul class="nav pull-right">
+        <li>
+          <a id="rnoc-help"
+	     class="btn btn-small"
+	     rel="tooltip"
+	     title="help"><i class="icon-question-sign icon-black"></i> </a>
         </li>
       </ul>
     </div>
