@@ -10,3 +10,10 @@ input, button, select, textarea {
     font-family: Arial;
 }
 
+.modal-body a {
+    color: #000000;
+}
+
+.modal-body a:hover {
+    color: #000000;
+}
