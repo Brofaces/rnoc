@@ -5,7 +5,7 @@
 $(document).ready =>
     # We don't want to have spacebar and arrow keys freaking out on us
     # when we're in the new page(box) view.
-    if /.*\/new\/?$/.test(location.href) isnt true
+    if /.*\/(new|edit)\/?$/.test(location.href) isnt true
         # keyboard navigation controls
         $(document).keydown (event) ->
             code = if event.keyCode then event.keyCode else event.which
@@ -53,4 +53,8 @@ $(document).ready =>
         if /.*\/pageboxes\/new\/?$/.test(location.href)
             $('#pagebox_title').focus()
         if /.*\/pages\/new\/?$/.test(location.href)
+            $('#page_title').focus()
+        if /.*\/pageboxes\/[0-9]*\/edit\/?$/.test(location.href)
+            $('#pagebox_title').focus()
+        if /.*\/pages\/[0-9]*\/edit\/?$/.test(location.href)
             $('#page_title').focus()
