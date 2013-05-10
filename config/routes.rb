@@ -1,5 +1,7 @@
 Rnoc::Application.routes.draw do
-  resources :orgs
+  resources :orgs do
+    resources :pages
+  end
 
 
   resources :pages do
@@ -10,7 +12,8 @@ Rnoc::Application.routes.draw do
     end
   end
 
-  root :to => "home#index"
+  # root :to => "home#index"
+  root :to => "orgs#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

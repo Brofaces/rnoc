@@ -28,6 +28,9 @@
     <!--        Enabled -->
     <!-- </span><br /><br /> -->
 
+    <label>org_id</label>
+    <%= f.text_field :org_id %>
+
     <label class="checkbox">
       <%= f.check_box :enabled, {:checked => @page.enabled}, 1, 0 %> Enabled?
     </label>

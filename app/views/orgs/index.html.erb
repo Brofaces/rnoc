@@ -1,25 +1,49 @@
-<h1>Listing orgs</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Org</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @orgs.each do |org| %>
-  <tr>
-    <td><%= org.title %></td>
-    <td><%= org.org_id %></td>
-    <td><%= link_to 'Show', org %></td>
-    <td><%= link_to 'Edit', edit_org_path(org) %></td>
-    <td><%= link_to 'Destroy', org, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% if notice %>
+  <div class="container">
+    <div class="alert alert-info"><%= notice %></div>
+  </div>
 <% end %>
-</table>
 
-<br />
+<div class="container">
+  <br>
+  <% if !@orgs.empty? %>
+    <% @orgs.each do |org| %>
+      <p><i class="icon-globe icon-white"></i> &nbsp;
+        <font class="home">
+          <%= link_to org.title, org_path(org) %>
+        </font>
+      </p>
 
-<%= link_to 'New Org', new_org_path %>
+    <% end %>
+  <% else %>
+    <p><font class="home">No organizations to list. Please add an org.</font></p>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="navbar">
+    <div class="navbar-inner navbar-fixed-bottom">
+      <ul class="nav">
+        <li>
+          <%= link_to({:controller => :orgs, :action => :new}, {:class => 'btn btn-small', :rel => 'tooltip', :title => 'add org'}) do %>
+            <i class="icon-plus-sign icon-black"></i> <% end %>
+        </li>
+        <li>
+          &nbsp;
+        </li>
+      </ul>
+
+      <!-- Help/More info button -->
+      <ul class="nav pull-right">
+        <li>
+          <a id="rnoc-help"
+             class="btn btn-small"
+             rel="tooltip"
+             title="help"><i class="icon-question-sign icon-black"></i> </a>
+        </li>
+      </ul>
+
+
+    </div>
+  </div>
+</div>

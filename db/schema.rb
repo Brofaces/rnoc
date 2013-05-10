@@ -15,12 +15,9 @@ ActiveRecord::Schema.define(:version => 20130510165346) do
 
   create_table "orgs", :force => true do |t|
     t.string   "title"
-    t.integer  "org_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "orgs", ["org_id"], :name => "index_orgs_on_org_id", :unique => true
 
   create_table "pageboxes", :force => true do |t|
     t.string   "title"

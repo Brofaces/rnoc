@@ -14,6 +14,7 @@ class OrgsController < ApplicationController
   # GET /orgs/1.json
   def show
     @org = Org.find(params[:id])
+    @pages = @org.pages
 
     respond_to do |format|
       format.html # show.html.erb
