@@ -1,4 +1,5 @@
 class Page < ActiveRecord::Base
+  belongs_to :org
   has_many :pageboxes
   validates_presence_of :title
 

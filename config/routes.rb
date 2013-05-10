@@ -1,4 +1,7 @@
 Rnoc::Application.routes.draw do
+  resources :orgs
+
+
   resources :pages do
     resources :pageboxes
 

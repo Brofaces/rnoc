@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121002231734) do
+ActiveRecord::Schema.define(:version => 20130510165346) do
+
+  create_table "orgs", :force => true do |t|
+    t.string   "title"
+    t.integer  "org_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "orgs", ["org_id"], :name => "index_orgs_on_org_id", :unique => true
 
   create_table "pageboxes", :force => true do |t|
     t.string   "title"
@@ -26,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20121002231734) do
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
     t.boolean  "enabled",    :default => true
+    t.integer  "org_id",     :default => 1
   end
 
 end
