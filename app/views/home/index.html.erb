@@ -11,6 +11,7 @@
   <p><i class="icon-fire icon-white"></i> &nbsp;
     <font class="home">
       <%= link_to page.title, page_path(page) %>
+      (<%= page.order %>)
       <% if !page.enabled %>
       (Disabled)
       <% end %>

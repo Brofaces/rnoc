@@ -27,6 +27,12 @@ class PagesController < ApplicationController
   def new
     @page = Page.new
 
+    if Page.all.length == 0
+      @default_order = 1
+    else
+      @default_order = Page.all.sort_by{|page| page[:order]}.last[:order] + 1
+    end
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render :json => @page }
@@ -36,6 +42,7 @@ class PagesController < ApplicationController
   # GET /pages/1/edit
   def edit
     @page = Page.find(params[:id])
+    @default_order = @page.order
   end
 
   # POST /pages
