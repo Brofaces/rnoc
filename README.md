@@ -13,7 +13,10 @@ What can I do?
 * Configure logo in `config/rnoc.yml`: **logo**
 * Configure site title in `config/rnoc.yml`: **site_title**
 
-[REST API]("API.md")
+
+It's RESTFUL
+============
+Use the [REST API]("/API.md") to create/delete pages and pageboxes.
 
 How do I get started
 ====================
