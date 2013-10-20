@@ -1,6 +1,6 @@
 class PageboxesController < ApplicationController
-  # GET /pageboxes
-  # GET /pageboxes.json
+  # GET /pages/1/pageboxes
+  # GET /pages/1/pageboxes.json
   def index
     @pageboxes = Pagebox.all
 
@@ -10,8 +10,8 @@ class PageboxesController < ApplicationController
     end
   end
 
-  # GET /pageboxes/1
-  # GET /pageboxes/1.json
+  # GET /pages/1/pageboxes/1
+  # GET /pages/1/pageboxes/1.json
   def show
     @pagebox = Pagebox.find(params[:id])
 
@@ -21,8 +21,8 @@ class PageboxesController < ApplicationController
     end
   end
 
-  # GET /pageboxes/new
-  # GET /pageboxes/new.json
+  # GET /pages/1/pageboxes/new
+  # GET /pages/1/pageboxes/new.json
   def new
     @page = Page.find(params[:page_id])
     @pagebox = @page.pageboxes.build
@@ -35,14 +35,14 @@ class PageboxesController < ApplicationController
     end
   end
 
-  # GET /pageboxes/1/edit
+  # GET /pages/1/pageboxes/1/edit
   def edit
     @pagebox = Pagebox.find(params[:id])
     @page = @pagebox.page
   end
 
-  # POST /pageboxes
-  # POST /pageboxes.json
+  # POST /pages/1/pageboxes
+  # POST /pages/1/pageboxes.json
   def create
     @page = Page.find(params[:page_id])
 
@@ -59,8 +59,8 @@ class PageboxesController < ApplicationController
     end
   end
 
-  # PUT /pageboxes/1
-  # PUT /pageboxes/1.json
+  # PUT /pages/1/pageboxes/1
+  # PUT /pages/1/pageboxes/1.json
   def update
     @pagebox = Pagebox.find(params[:id])
     @page = @pagebox.page
@@ -76,8 +76,8 @@ class PageboxesController < ApplicationController
     end
   end
 
-  # DELETE /pageboxes/1
-  # DELETE /pageboxes/1.json
+  # DELETE /pages/1/pageboxes/1
+  # DELETE /pages/1/pageboxes/1.json
   def destroy
     @pagebox = Pagebox.find(params[:id])
     @id = @pagebox.page_id

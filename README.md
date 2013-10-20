@@ -13,6 +13,8 @@ What can I do?
 * Configure logo in `config/rnoc.yml`: **logo**
 * Configure site title in `config/rnoc.yml`: **site_title**
 
+[REST API]("API.md")
+
 How do I get started
 ====================
 
@@ -31,7 +33,6 @@ gem extensions. In particular, `mysql-devel`, and `sqlite-devel`:
 3. Start it up!
 
     $ bundle exec thin start
-
 
 
 Who can I thank
