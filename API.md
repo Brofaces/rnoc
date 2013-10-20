@@ -12,8 +12,8 @@ POST /pages
 
      { "title": "My Swet Page",
        "enabled": "true",
-         "order": "5",
-	 }
+       "order": "5",
+     }
 
 ### delete
 
@@ -30,7 +30,7 @@ POST /pages/page-id/pageboxes
      
      { "title": "My killer pagebox",
        "content": "http://killer-charts.bz/requests-per-hour.png",
-       }
+     }
 
 ## delete
 
