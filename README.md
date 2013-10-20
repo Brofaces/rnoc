@@ -16,7 +16,7 @@ What can I do?
 
 It's RESTFUL
 ============
-Use the [REST API]("/API.md") to create/delete pages and pageboxes.
+Use the [REST API](/API.md) to create/delete pages and pageboxes.
 
 How do I get started
 ====================
