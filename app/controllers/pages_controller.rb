@@ -48,6 +48,16 @@ class PagesController < ApplicationController
   # POST /pages
   # POST /pages.json
   def create
+    if Page.all.length == 0
+      @default_order = 1
+    else
+      @default_order = Page.all.sort_by{|page| page[:order]}.last[:order] + 1
+    end
+
+    if params[:page][:order] == nil
+      params[:page][:order] = @default_order
+    end
+
     @page = Page.new(params[:page])
 
     respond_to do |format|

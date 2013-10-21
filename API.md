@@ -7,8 +7,8 @@
 POST /pages
 
      title string
-     enabled boolean (true|false)
-     order integer
+     enabled boolean (true|false) (optional: defaults to true)
+     order integer (optional: defaults to next integer value)
 
      { "title": "My Swet Page",
        "enabled": "true",
