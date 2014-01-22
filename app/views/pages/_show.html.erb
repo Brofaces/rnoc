@@ -27,9 +27,12 @@
 
 <div class="row-fluid">
   <% @pageboxes.each do |pb| %>
-    <div class="span4 pagebox_container">
-      <div class="navbar-more-inner"><%= pb.title %>
-
+  <% if @pageboxes.length > 1 %>
+  <div class="span4 pagebox_container">
+  <% else %>
+  <div class="pagebox_container">
+  <% end %>
+  <div class="navbar-more-inner"><%= pb.title %>
 	<%=  link_to([pb.page, pb], {:confirm => 'Are you sure?', :method => :delete, :class => 'close-inner'}) do %>
           <i class="icon-trash icon-red"></i> <% end %>
 
