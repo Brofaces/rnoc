@@ -1,3 +1,6 @@
+require 'uri'
+require 'net/http'
+
 class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
@@ -15,6 +18,15 @@ class PagesController < ApplicationController
   def show
     @page = Page.find(params[:id])
     @pageboxes = @page.pageboxes
+    @peebs = {}
+
+    @pageboxes.each do |pb|
+      url = URI.parse(pb.content)
+      req = Net::HTTP::Get.new(url.path)
+      http = Net::HTTP.new(url.host, url.port)
+      http.use_ssl = true if pb.content.match(/^https:/)
+      @peebs[pb.content] = http.request(req).body.force_encoding('UTF-8')
+    end
 
     respond_to do |format|
       format.html # show.html.erb
