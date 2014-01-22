@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RNOC</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <link href="/assets/css/rnoc.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="navbar-inner navbar-fixed-top">
+          <div class="pull-left">
+            <a href="/"><img src="<%= RNOC[:logo] %>" id="rnoc-logo"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+<br>
+<br>
+      <%= yield %>
+
+
+    <!-- Help/More information -->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">About RNOC</h3>
+      </div>
+      <div class="modal-body">
+        <p>
+          <b>RNOC</b> is a <b>N</b>etwork <b>O</b>perations <b>C</b>onsole
+          written in Ruby on Rails. RNOC was originally a project
+          at <a href="http://www.redhat.com">Red Hat</a>, which is
+          where the <b>R</b> in the title comes from.
+        </p>
+
+        <h3>Getting Help/Reporting Bugs</h3>
+
+        <ul>
+	  <li><a href="https://github.com/Brofaces/rnoc/"><i class="icon-home"></i> RNOC project page on GitHub</a></li>
+          <li><a href="https://github.com/Brofaces/rnoc/issues"><i class="icon-fire"></i> Issue Tracker on GitHub</a></li>
+        </ul>
+
+        <h4>Credits</h4>
+
+	<ul>
+	  <li>
+	    <b>RNOC</b> was originally written
+	    by <a href="https://github.com/tbielawa">Tim Bielawa</a>,
+	    <a href="https://github.com/abutcher">Andrew Butcher</a>,
+	    and <a href="https://github.com/yithian">Alex Chvatal</a>
+	  </li>
+	</ul>
+
+	<p>
+	  <b>RNOC</b> is Copyright &copy; 2012-2013 Red Hat Inc.
+	</p>
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+
+
+
+
+  </body>
+</html>

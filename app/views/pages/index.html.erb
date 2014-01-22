@@ -1,0 +1,33 @@
+<div class="container">
+
+  <div class="navbar-inner">
+    <h1>Listing pages</h1>
+  </div>
+
+  <table class="table table-condensed">
+    <tr>
+      <th>Title</th>
+      <th>Action</th>
+    </tr>
+
+    <% @pages.each do |page| %>
+      <tr>
+        <td><%= page.title %></td>
+        <td>
+          <div class="btn-group">
+        <%= link_to 'Show', page, :class => 'btn' %>
+        <%= link_to 'Edit', edit_page_path(page), :class => 'btn' %>
+        <%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %>
+          </div>
+
+        </td>
+
+      </tr>
+    <% end %>
+  </table>
+
+  <br />
+
+  <%= link_to 'New Page', new_page_path, :class => 'btn' %>
+
+</div>

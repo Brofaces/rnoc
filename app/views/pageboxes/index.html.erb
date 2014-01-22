@@ -1,0 +1,27 @@
+<div class="container">
+
+<h1>Listing pageboxes</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pageboxes.each do |pagebox| %>
+  <tr>
+    <td><%= pagebox.title %></td>
+    <td><%= link_to 'Show', pagebox.page, :class => 'btn' %></td>
+    <td><%= link_to 'Edit', edit_page_pagebox_path(pagebox.page, pagebox), :class => 'btn' %></td>
+    <td><%= link_to 'Destroy', [pagebox.page, pagebox], :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pagebox', new_page_pagebox_path %>
+
+</div>

@@ -1,0 +1,41 @@
+<%= form_for(@page) do |f| %>
+
+  <% if @page.errors.any? %>
+    <br />
+    <div class="alert alert-error">
+      <b>Oh Snap!</b> <%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:
+
+      <ul>
+        <% @page.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+
+    </div>
+  <% end %>
+
+  <br />
+
+  <!-- <span class="label label-inverse"> -->
+  <!--  Title -->
+  <!-- </span><br /><br /> -->
+  <fieldset>
+    <label>Title</label>
+    <%= f.text_field :title %>
+
+    <label>Order</label>
+    <%= f.text_field :order, :value => @default_order %>
+
+    <!-- <span class="label label-inverse"> -->
+    <!--        Enabled -->
+    <!-- </span><br /><br /> -->
+
+    <label class="checkbox">
+      <%= f.check_box :enabled, {:checked => @page.enabled}, 1, 0 %> Enabled?
+    </label>
+
+    <!-- <%= f.check_box :enabled, {:checked => @page.enabled}, 1, 0 %><br /><br /> -->
+
+    <%= f.submit :class => 'btn btn-inverse'  %>
+  </fieldset>
+<% end %>

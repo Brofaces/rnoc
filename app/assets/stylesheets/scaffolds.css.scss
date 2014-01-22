@@ -1,0 +1,120 @@
+/* -*- mode: css -*- */
+
+body {
+  background-color: #000000;
+  /*  color: #333; */
+  color: rgb(96,96,91);
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #000;
+  &:visited {
+    color: #666;
+  }
+  &:hover {
+    color: #fff;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    marginbottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+.allthepageboxes {
+  width: 100%;
+}
+
+.pagebox_container {
+  float: left;
+  text-align: center;
+}
+
+iframe {
+  width: 1100px;
+  height: 720px;
+}
+
+.footerlink > a {
+  color: #666;
+  &:visited {
+    color: #666;
+  }
+  &:hover {
+    color: #fff;
+  }
+}
+
+.home {
+  font-size: 175%;
+}
+
+.home > a {
+  color: rgb(204,0,0);
+  text-decoration: none;
+  &:visited {
+    color: rgb(204,0,0);
+  }
+  &:hover {
+    color: #fff;
+  }
+}
+
+.pagebox_container a {
+  color: rgb(204,0,0);
+  &:visited {
+    color: rgb(204,0,0);
+  }
+  &:hover {
+    color: #000;
+  }
+}

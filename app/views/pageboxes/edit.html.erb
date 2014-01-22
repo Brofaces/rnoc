@@ -1,0 +1,36 @@
+<div class="container">
+
+	<h1>Editing pagebox</h1>
+
+	<%= form_for([@page, @pagebox]) do |f| %>
+	<br />
+	  <% if @pagebox.errors.any? %>
+	  <div class="alert alert-error">
+	      <b> Oh Snap! </b> <%= pluralize(@pagebox.errors.count, "error") %> prohibited this pagebox from being saved:
+	      <ul>
+		<% @pagebox.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+
+	<br />
+
+	<span class="label label-inverse">
+	  Title
+	</span><br /><br />
+	<%= f.text_field :title %><br />
+
+	<span class="label label-inverse">
+	  Content
+	</span><br /><br />
+	<%= f.text_area :content %><br />
+
+	<%= f.submit :class => 'btn btn-inverse' %>
+
+	<% end %>
+	<%= link_to 'Show', @page, :class => 'btn' %> |
+	<%= link_to 'Back', @page, :class => 'btn' %>
+
+</div>

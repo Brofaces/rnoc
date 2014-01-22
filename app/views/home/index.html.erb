@@ -1,0 +1,59 @@
+<% if notice %>
+  <div class="container">
+  <div class="alert alert-info"><%= notice %></div>
+  </div>
+<% end %>
+
+<div class="container">
+  <br>
+  <% if !@pages.empty? %>
+  <% @pages.each do |page| %>
+  <p><i class="icon-fire icon-white"></i> &nbsp;
+    <font class="home">
+      <%= link_to page.title, page_path(page) %>
+      (<%= page.order %>)
+      <% if !page.enabled %>
+      (Disabled)
+      <% end %>
+    </font>
+  </p>
+  <% end %>
+  <% else %>
+  <p><font class="home">No pages to list. Please add a page.</font></p>
+  <% end %>
+</div>
+
+
+<div class="container">
+  <div class="navbar">
+    <div class="navbar-inner navbar-fixed-bottom">
+      <ul class="nav">
+	<li>
+	  <%= link_to({:controller => :pages, :action => :new}, {:class => 'btn btn-small', :rel => 'tooltip', :title => 'add page'}) do %>
+	    <i class="icon-plus-sign icon-black"></i> <% end %>
+	</li>
+	<li>
+	  &nbsp;
+	</li>
+		<% if !@pages.empty? %>
+		<li>
+		  <%= link_to("/pages/#{@first.id}/cycle", {:class => 'btn btn-small btn-success', :id => 'play', :rel => 'tooltip', :title => 'cycle pages'}) do %>
+		  <i class="icon-play icon-black"></i> <% end %>
+		</li>
+		<% end %>
+      </ul>
+
+      <!-- Help/More info button -->
+      <ul class="nav pull-right">
+        <li>
+          <a id="rnoc-help"
+	     class="btn btn-small"
+	     rel="tooltip"
+	     title="help"><i class="icon-question-sign icon-black"></i> </a>
+        </li>
+      </ul>
+
+
+    </div>
+  </div>
+</div>
