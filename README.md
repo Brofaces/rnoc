@@ -21,6 +21,17 @@ Use the [REST API](/API.md) to create/delete pages and pageboxes.
 How do I get started
 ====================
 
+OpenShift
+---------
+
+1. Create a new app with cartridge type **Ruby 1.9** and source
+   repository as ``https://github.com/Brofaces/rnoc.git``
+2. If you want to use MySQL instead of sqlite3 for the database, edit
+   ``config/database.yml`` and uncomment the block as indicated at the
+   bottom of the file
+3. Enjoy!
+
+
 Install the necessary gems
 --------------------------
 
