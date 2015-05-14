@@ -19,6 +19,17 @@ test:
   timeout: 5000
 
 production:
+  # Uncomment this block if you want to use MySQL instead of
+  # sqlite3. Comment out the sqlite3 block if you enable mysql. THERE
+  # CAN BE ONLY ONE!
+  #
+  # adapter: mysql2
+  # database: <%=ENV['OPENSHIFT_APP_NAME']%>
+  # pool: 5
+  # username: <%= ENV['OPENSHIFT_MYSQL_DB_USERNAME'] %>
+  # password: <%= ENV['OPENSHIFT_MYSQL_DB_PASSWORD'] %>
+  # socket: <%= ENV['OPENSHIFT_MYSQL_DB_SOCKET'] %>
+
   adapter: sqlite3
   database: db/prod.sqlite3
   pool: 5
